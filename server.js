@@ -154,7 +154,7 @@ async function startDownload(job) {
 
   const args = [
     job.url,
-    '-f', 'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080][ext=mp4]/best[height<=1080]/best',
+    '-f', 'bestvideo[height<=1080][ext=mp4][vcodec^=avc1]+bestaudio[ext=m4a]/bestvideo[height<=1080][ext=mp4][vcodec^=avc1]/best[height<=1080][ext=mp4][vcodec^=avc1]/best[height<=1080][ext=mp4]/best[height<=1080]',
     '--merge-output-format', 'mp4',
     '--postprocessor-args', 'Merger+ffmpeg:-movflags +faststart',
     '-o', outputTemplate,
