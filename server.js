@@ -156,6 +156,7 @@ async function startDownload(job) {
     job.url,
     '-f', 'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080][ext=mp4]/best[height<=1080]/best',
     '--merge-output-format', 'mp4',
+    '--postprocessor-args', 'Merger+ffmpeg:-movflags +faststart',
     '-o', outputTemplate,
     '--no-playlist',
     '--no-warnings',
